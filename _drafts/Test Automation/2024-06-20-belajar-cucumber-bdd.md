@@ -12,6 +12,7 @@ inspiration: https://test-automation.blog/bdd/cucumber-specflow-api-tests/, http
 Cara nulis skenario dengan format Gherkin itu berasa aneh.
 
 buat yang belum tahu, format Gherkin yang ada di tutorial2 itu seperti ini:
+
 ```cucumber
 **Given** I start
 **When** I click

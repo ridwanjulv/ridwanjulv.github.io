@@ -1,0 +1,121 @@
+
+7:51 AMO 
+.,lll 
+Serverless Architecture: https://Inkd.in/gQNAXKkb 
+Event-Driven Architecture: https://Inkd.in/dp8CPvey 
+Peer-to-Peer (P2P) Architecture: 
+https://Inkd.in/di32HDu3 
+More System Design resources in this GitHub 
+repository: https://Inkd.in/gEVpTZKH 
+Join 4400+ readers of my weekly newsletter (Dev 
+Design Digest) for simple and visual explanations to 
+coding and system design concepts: 
+https://Inkd.in/dXtb8SwU 
+
+
+7:50 AMO 
+System Design Building Blocks 
+Horizontal vs Vertical Scaling: 
+https://Inkd.in/gAH2e9du 
+Databases: https://Inkd.in/gti8gjpz 
+Content Delivery Network (CDN): 
+https://Inkd.in/gjJrEJeH 
+Domain Name System (DNS): 
+https://Inkd.in/gkMcZW8V 
+Caching: https://Inkd.in/gC9piQbJ 
+Distributed Caching: https://Inkd.in/g7WKydNg 
+Load Balancing: https://Inkd.in/gQaa8sXK 
+SQL vs NoSQL: https://Inkd.in/g3WC_yxn 
+Database Indexs: https://Inkd.in/gCeshYVt 
+HeartBeat: https://Inkd.in/g4x7sMrF 
+Circuit Breaker: https://Inkd.in/gCxyFzKm 
+- Idempotency: https://Inkd.in/gPm6EtKJ 
+Database Scaling: https://Inkd.in/gAXpSyWQ 
+Data Replication: https://Inkd.in/gVAJxTpS 
+Data Redundancy: https://Inkd.in/gNN7TF7n 
+Database Sharding: https://Inkd.in/gMqqc6x9 
+Failover: https://Inkd.in/dihZ-cEG 
+Proxy Server: https://Inkd.in/gi8KnKS6 
+Message Queues: https://Inkd.in/gTzY6uk8 
+WebSockets: https://Inkd.in/g76Gv2KQ 
+Bloom Filters: https://Inkd.in/dt4QbSUz 
+API Gateway: https://Inkd.in/gnsJGJaM 
+Distributed Locking: https://Inkd.in/gRxNJwWE 
+Checksum: https://Inkd.in/ghNc5pfn 
+System Design Architectural Patterns 
+Client-Server Architecture: https://Inkd.in/dAARQYzq 
+Microservices Architecture: https://Inkd.in/gFXUrz_T 
+Serverless Architecture: https://Inkd.in/gQNAXKkb 
+Event-Driven Architecture: https://Inkd.in/dp8CPvey 
+Peer-to-Peer (P2P) Architecture: 
+https://Inkd.in/di32HDu3 
+More System Design resources in this GitHub 
+
+
+7:50 AMO 
+Ashish Pratap Singh • 3rd+ 
+SDE-2 @Amazon I Author of "Dev... 
+19h•O 
+Follow 
+How I Would Learn System Design Fundamentals (If I 
+Had To Start Over): 
+System Design Key Concepts 
+Scalability: https://Inkd.in/gpge_z76 
+Latency vs Throughput: https://Inkd.in/g_amhAtN 
+- CAP Theorem: https://Inkd.in/g3hmVamx 
+ACID Transactions: https://Inkd.in/gMe2JqaF 
+Consistent Hashing: https://Inkd.in/gd3eAQKA 
+Rate Limiting: https://Inkd.in/gWsTDR3m 
+- API Design: https://Inkd.in/ghYzrr8q 
+Strong vs Eventual Consistency: 
+https://Inkd.in/gJ-uXQXZ 
+Synchronous vs. asynchronous communications: 
+https://Inkd.in/gC3F2nvr 
+REST vs RPC: https://lnkd.in/gN_zcAB 
+Batch Processing vs Stream Processing: 
+https://Inkd.in/g4_MzM4s 
+Fault Tolerance: https://Inkd.in/dVJ6n3wA 
+Consensus Algorithms: https://Inkd.in/ggc3tFbr 
+Gossip Protocol: https://Inkd.in/gfPMtrJZ 
+Service Discovery: https://Inkd.in/gjnrYkyF 
+Disaster Recovery: https://Inkd.in/g8rnr3V3 
+Distributed Tracing: https://Inkd.in/d6r5RdXG 
+Top 1 5 Tradeoffs: https://Inkd.in/gnM8QC-z 
+System Design Building Blocks 
+Horizontal vs Vertical Scaling: 
+https://Inkd.in/gAH2e9du 
+Databases: https://Inkd.in/gti8gjpz 
+Content Delivery Network (CDN): 
+https://Inkd.in/gjJrEJeH 
+Domain Name System (DNS): 
+https://Inkd.in/gkMcZW8V 
+Home 
+My Network 
+Post 
+25 
+Notifications 
+Jobs 
+
+
+
+
+Migrasi ke Microservices 
+Kalau ada yang ngide kaya gitu, anda skill issue. 
+Absolut, ga pake "tergantung". 
+
+Karena War Stories nya sudah banyak yang nulis. 
+Building Microservices, Sam Newman. 
+Architecture, The Hard Parts. Neal Ford, dkk 
+Monolith to Microserices, Sam Newman. 
+Learning Domain Driven Design, Vlad 
+Khononov 
+Yang gratis dari Microsoft Learn. Dengan kata 
+kunci berikut 
+- Domain Driven Design 
+- Hexagonal Architecture 
+- Onion Architecture 
+Selain itu, bikin Microservices ga bisa tanpa 
+CI/CD. Jadi buku yang saya sarankan 
+DevOps Handbook, Gene Kim. 
+
+

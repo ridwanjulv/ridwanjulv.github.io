@@ -1,0 +1,6 @@
+Excel formula for gantt chart:
+conditional formatting: =AND(E$4>=$C5,E$4<=$D5)
+
+E$4 == current date
+$C5 == start date
+$D5 == end date

@@ -1,0 +1,28 @@
+What does API Gateway do?
+
+1a. Client: Web/Mobile/PC
+1b. HTTP Request
+         |
+         |
+         v
+2. Parameter Validation
+-> 3. Allow-list/Deny-list
+-> 4. Authentication/Authorization
+-> 5. Rate Limit
+-> 6. Dynamic Routing
+-> 7. Service Discovery
+-> 8. Protocol Conversion
+          |
+          |
+          v
+9. Microservices
+        
+10a. Error Handling
+10b. Circuit Break
+10c. Logging Monitoring
+10d. Cache
+        |
+        |
+        v
+11. Elastic
+12. Redis
