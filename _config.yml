@@ -14,12 +14,15 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Bapack.Ridwan # the main title
+title: Ridwan J. # the main title
 
-tagline: Exploring Test Automation - Tips & tricks, lessons learned, strategies, and other stuffs # it will display as the sub-title
+tagline: Code & Coffee - My Tech Musings and Daily Learnings # it will display as the sub-title
+# My Coding Journey: Adventures in AI, Automation, and Software Development
+# Digital adventures of a curious coder - Learn, build, and grow together
+# Leveling Up Me: My Journey into AI, Coding, and Automation
 
 description: >- # used by seo meta and the atom feed
-  A blog exploring about test automation and other IT related topics.
+  A blog exploring about AI, ML, Data Analytics, Test Automation, Python, Javascript, NextJS, ReactJS, SQL, DuckDB and other IT related topics.
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
