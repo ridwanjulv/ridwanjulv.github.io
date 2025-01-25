@@ -1,20 +1,23 @@
 ---
-title: Sharing My Journey
+title: A New Chapter of My Journey 
 description: >-
-  A short introduction for this blog
+  I have been in the industry for almost 20 years. All this time I've learn a lot, but never _
+  tried to write and share. This year, I'd like to embark in a new chapter of my journey. _
+  Consider this as my commitment, to start writing and sharing my thoughts, my experience, and my lessons-learned.
 date: 2025-01-22 00:00:00 +0700
 categories: [random, rants]       # only 2 level supported
 tags: [rants]    # TAG names should always be lowercase
 ---
 
+
 Hi there! 
 
-This little corner here will be the place where I'm going to share my thoughts, my experiences, and my lessons-learned around technology.  
+I have been in the industry for almost 20 years. All this time I've learn a lot, but never tried to write and share. This year, I'd like to embark in a new chapter of my journey. Consider this post as my commitment to start writing and sharing my thoughts, my experience, and my lessons-learned.
 
-As technology plays a significant role in my life, both personally and professionally, I do hope I can share a things or two to someone that might not quite where I am now. 
+As technology plays a significant role in my life—both personally and professionally—my hope is that I can share a thing or two with you.
 
-I must admit that I'm not a master on these area. Here I'm just a student, a learner, hoping to share a bit of my experiences, insights, and learnings.
+I’ll be the first to admit I’m not an expert, not even after all this year. I’m just a student, a curious learner, a normal person eager to learn new stuffs, and to share my experiences, insights, and discoveries along the way.
 
 I hope you enjoy reading about my tech journey as much as I enjoy experiencing it.
 
-See you soon on my next post :)
+See you soon on my next post 😊
