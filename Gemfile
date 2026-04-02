@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-gem "jekyll-theme-chirpy", "~> 7.0", ">= 7.0.1"
+gem "minima", github: "jekyll/minima", ref: "c6e74bb"
 
 group :test do
   gem "html-proofer", "~> 5.0"
