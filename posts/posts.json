@@ -1,0 +1,10 @@
+{
+  "posts": [
+    {
+      "slug": "your-post-slug",
+      "title": "Your Post Title Here",
+      "tag": "Systems Design",
+      "date": "April 2026"
+    }
+  ]
+}

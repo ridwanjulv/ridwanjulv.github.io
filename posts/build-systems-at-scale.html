@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build systems at scale: what breaks and why — Your Name</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/post.css">
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-mark">Your Name</a>
+  <ul class="nav-links">
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../portofolio.html">Work</a></li>
+    <li><a href="../about.html#experience">Experience</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <article class="post">
+    <header class="post-header">
+      <div class="post-meta">
+        <span class="post-tag">Infrastructure</span>
+        <span class="post-date">May 2023</span>
+      </div>
+      <h1 class="post-title">Build systems at scale: what breaks and why</h1>
+    </header>
+
+    <div class="post-body">
+      <p>At some point in every growing engineering organisation, the build stops being fast. This happens gradually, then suddenly. A CI run that took 4 minutes now takes 40. Nobody changed anything dramatic — it's the compounding cost of a hundred small decisions made when the codebase was smaller.</p>
+
+      <h2>The cache invalidation problem is usually the build problem</h2>
+
+      <p>Most slow builds are slow because of cache misses, not because of actual work. A test suite that re-runs 800 tests when you change a utility function has a dependency graph problem. Bazel, Buck, and Pants exist to solve this: they model your build as a directed acyclic graph and only rebuild what actually changed.</p>
+
+      <p>The upfront cost is real — these tools require explicit dependency declarations and a shift in how you think about code organisation. The payoff at scale is equally real: builds that are O(change size) rather than O(codebase size).</p>
+
+      <h2>Test parallelism has diminishing returns</h2>
+
+      <p>Throwing more cores at a slow test suite helps, up to a point. The limit is usually I/O — database connections, file handles, network calls in tests that shouldn't make them. Profiling your test suite before scaling your CI infrastructure often reveals that 20% of tests account for 80% of runtime, and most of those have fixable problems.</p>
+
+      <h2>Flaky tests are a build system problem</h2>
+
+      <p>A test that fails 5% of the time is worse than a test that always fails, because it's invisible. Engineers learn to re-run CI until it passes. Flakiness is technical debt with interest. Track flakiness rates explicitly, assign ownership, and treat flaky tests as P2 bugs. The teams that do this have fundamentally different CI cultures than the teams that don't.</p>
+    </div>
+
+    <footer class="post-footer">
+      <a href="../blog.html" class="post-back">← Back to Blog</a>
+    </footer>
+  </article>
+</div>
+
+<footer>
+  <span>© 2025 Your Name</span>
+  <span>Built by hand — no frameworks</span>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

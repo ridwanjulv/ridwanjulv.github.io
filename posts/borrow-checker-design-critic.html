@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The borrow checker isn't your enemy — Your Name</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/post.css">
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-mark">Your Name</a>
+  <ul class="nav-links">
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../portofolio.html">Work</a></li>
+    <li><a href="../about.html#experience">Experience</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <article class="post">
+    <header class="post-header">
+      <div class="post-meta">
+        <span class="post-tag">Rust</span>
+        <span class="post-date">January 2025</span>
+      </div>
+      <h1 class="post-title">The borrow checker isn't your enemy — it's a design critic</h1>
+    </header>
+
+    <div class="post-body">
+      <p>Every Rust beginner has the same experience: write some seemingly reasonable code, get a wall of borrow checker errors, feel like the language is working against you. I had this experience. My colleagues had this experience. It's nearly universal.</p>
+
+      <p>What took me a while to internalize is that the borrow checker isn't arbitrary — it's encoding a formal model of ownership and aliasing. When it rejects your code, it's telling you something about the structure of your program.</p>
+
+      <h2>Fighting the borrow checker is a design smell</h2>
+
+      <p>In my experience, the borrow checker fights hardest when I'm trying to express something that has a genuinely awkward ownership structure. A struct that holds a reference to data it doesn't own. A callback that captures a mutable reference into a closure that outlives the data. Shared state threaded through a graph of objects.</p>
+
+      <p>These are all patterns that are <em>technically possible</em> in other languages — but they're also the patterns that produce use-after-free bugs, data races, and heisenbugs in those languages. Rust just makes the cost visible at compile time.</p>
+
+      <h2>Reading the error as feedback</h2>
+
+      <p>When I stopped treating borrow checker errors as obstacles and started treating them as design feedback, my Rust code got better. A fight with the borrow checker over mutable aliasing often resolves cleanly when you rethink ownership: does this object really need to hold that reference? Can I pass the data through instead?</p>
+
+      <p>The classic transformation is moving from "object A holds a reference to object B" to "function receives both A and B". It feels like a downgrade — less elegant, more verbose — but it usually exposes that the original design had implicit coupling that would have caused problems anyway.</p>
+
+      <h2>The actual enemy</h2>
+
+      <p>The enemy isn't the borrow checker. It's the habit of porting designs from GC'd languages directly into Rust without reconsidering ownership. Rust idioms feel foreign at first because they're solving a problem the language takes seriously that other languages paper over with a garbage collector. Once that clicks, the borrow checker becomes a collaborator.</p>
+    </div>
+
+    <footer class="post-footer">
+      <a href="../blog.html" class="post-back">← Back to Blog</a>
+    </footer>
+  </article>
+</div>
+
+<footer>
+  <span>© 2025 Your Name</span>
+  <span>Built by hand — no frameworks</span>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

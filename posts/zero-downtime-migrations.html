@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zero-downtime migrations are possible — Your Name</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/post.css">
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-mark">Your Name</a>
+  <ul class="nav-links">
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../portofolio.html">Work</a></li>
+    <li><a href="../about.html#experience">Experience</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <article class="post">
+    <header class="post-header">
+      <div class="post-meta">
+        <span class="post-tag">Postgres</span>
+        <span class="post-date">February 2024</span>
+      </div>
+      <h1 class="post-title">Zero-downtime migrations are possible. Here's the checklist.</h1>
+    </header>
+
+    <div class="post-body">
+      <p>Most database migrations don't need downtime. The ones that cause incidents usually do so because of a lock taken at the wrong time, not because the change itself required taking the database offline.</p>
+
+      <h2>The checklist</h2>
+
+      <p><strong>Adding a column:</strong> Safe if nullable or has a server-side default. Dangerous if you add a non-nullable column with no default on a large table — Postgres will rewrite the table. Use a nullable column, backfill, then add the constraint.</p>
+
+      <p><strong>Dropping a column:</strong> Safe in two steps. First deploy code that stops reading/writing the column. Then drop it. Dropping first causes errors in any running version of your code that still references it.</p>
+
+      <p><strong>Adding an index:</strong> Always use <code>CREATE INDEX CONCURRENTLY</code>. The non-concurrent form takes a write lock for the entire build duration. On a 50GB table, that's a long maintenance window.</p>
+
+      <p><strong>Renaming a column:</strong> Never do it in one step. Add the new column, dual-write, backfill, migrate reads, remove the old column. Four deploys minimum.</p>
+
+      <p><strong>Changing a column type:</strong> Requires a table rewrite in most cases. Use a shadow column, backfill, swap at the application layer, clean up. Same pattern as rename.</p>
+
+      <h2>The rule underneath the checklist</h2>
+
+      <p>Every migration that touches existing data needs to be compatible with both the old and new version of your application running simultaneously. During a rolling deploy, you'll have both versions live. Your schema change has to work for both. This is the constraint that generates all the multi-step patterns above.</p>
+
+      <p>Build this constraint into your review process and most migration incidents disappear.</p>
+    </div>
+
+    <footer class="post-footer">
+      <a href="../blog.html" class="post-back">← Back to Blog</a>
+    </footer>
+  </article>
+</div>
+
+<footer>
+  <span>© 2025 Your Name</span>
+  <span>Built by hand — no frameworks</span>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

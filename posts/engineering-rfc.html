@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to write an engineering RFC that people actually read — Your Name</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/post.css">
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-mark">Your Name</a>
+  <ul class="nav-links">
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../portofolio.html">Work</a></li>
+    <li><a href="../about.html#experience">Experience</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <article class="post">
+    <header class="post-header">
+      <div class="post-meta">
+        <span class="post-tag">Career</span>
+        <span class="post-date">October 2024</span>
+      </div>
+      <h1 class="post-title">How to write an engineering RFC that people actually read</h1>
+    </header>
+
+    <div class="post-body">
+      <p>Most RFCs are too long. The second most common failure mode is being too vague. Both problems have the same root cause: the author isn't sure who they're writing for, so they write for everyone — and end up writing for no one.</p>
+
+      <h2>Start with the problem, not the solution</h2>
+
+      <p>The single most effective structural change you can make is spending the first third of your RFC on the problem statement. Not the background. Not the history. The <em>specific, observable problem</em> you are trying to solve. If you can't write this in three paragraphs without hedging, you don't understand the problem well enough to propose a solution.</p>
+
+      <h2>The decision section is the document</h2>
+
+      <p>Most readers will skip to the part where you tell them what you're proposing. Make that section explicit and early. A one-paragraph summary of the proposed change — what it is, not why — should appear before your alternatives section. Give readers the anchor before they read the justification.</p>
+
+      <h2>Alternatives aren't a formality</h2>
+
+      <p>The alternatives section is where you demonstrate that you've actually thought about the problem. A weak alternatives section (one option, described dismissively) signals that the author has already decided and is going through the motions. A strong alternatives section describes each option fairly and explains the trade-off that led you away from it.</p>
+
+      <h2>What to cut</h2>
+
+      <ul>
+        <li>History sections that read like a project post-mortem</li>
+        <li>Diagrams added to fill space rather than clarify</li>
+        <li>References to Jira tickets that 80% of reviewers can't access</li>
+        <li>Any sentence starting with "As we all know"</li>
+      </ul>
+
+      <p>The best RFC I ever read was four pages. It defined the problem, proposed a change, listed three alternatives with honest trade-offs, and described how success would be measured. It got approved in 48 hours. Length is not rigor.</p>
+    </div>
+
+    <footer class="post-footer">
+      <a href="../blog.html" class="post-back">← Back to Blog</a>
+    </footer>
+  </article>
+</div>
+
+<footer>
+  <span>© 2025 Your Name</span>
+  <span>Built by hand — no frameworks</span>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
