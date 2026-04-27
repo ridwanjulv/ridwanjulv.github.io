@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} — {% endif %}{{ metadata.title }}</title>
+  <meta name="description" content="{{ description or metadata.description }}">
+  <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+  <style>{% include "css/index.css" %}</style>
+  <style>{% getBundle "css" %}</style>
+</head>
+<body>
+  <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <a href="/">{{ metadata.title }}</a>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Site navigation">
+        <div class="nav-group">
+          <p class="nav-group-label">Writing</p>
+          <ul>
+            <li><a href="/blog/"{% if "/blog/" in page.url %} aria-current="page"{% endif %}>Blog</a></li>
+            <li><a href="/tags/"{% if page.url == "/tags/" %} aria-current="page"{% endif %}>Tags</a></li>
+          </ul>
+        </div>
+        <div class="nav-group">
+          <p class="nav-group-label">Info</p>
+          <ul>
+            <li><a href="/about/"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About</a></li>
+            <li><a href="/feed/feed.xml">RSS</a></li>
+          </ul>
+        </div>
+        <div class="nav-group">
+          <p class="nav-group-label">Theme</p>
+          <div class="theme-options">
+            <label><input type="radio" id="theme-auto" name="theme" checked> Auto</label>
+            <label><input type="radio" id="theme-light" name="theme"> Light</label>
+            <label><input type="radio" id="theme-dark" name="theme"> Dark</label>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="main-wrap">
+      <main id="main">
+        {{ content | safe }}
+      </main>
+
+      <footer class="site-footer">
+        <p class="footer-heading">Thanks for reading!</p>
+        <div class="footer-body">
+          <div class="footer-left">
+            {% set buildIso %}{% currentBuildDate %}{% endset %}
+            <p>&copy; 2024&ndash;{{ buildIso | truncate(4, false, "") }} {{ metadata.author.name }}.</p>
+            <p>Last built on {{ buildIso | replace("T", " at ") | truncate(22, false, "") }} UTC.</p>
+          </div>
+          <div class="footer-right">
+            <a href="https://github.com/ridwanjulv">GitHub</a>
+            <a href="/feed/feed.xml">RSS</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

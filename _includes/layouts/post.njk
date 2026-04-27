@@ -1,0 +1,67 @@
+---
+layout: layouts/base.njk
+---
+<style>{% include "node_modules/prismjs/themes/prism.css" %}</style>
+
+{% set tocItems = content | toc %}
+
+<article>
+  <header class="post-header">
+    <p class="post-eyebrow">
+      <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate("MMMM dd, yyyy") }}</time>
+      {%- if updated %}
+       &middot; Updated <time datetime="{{ updated | htmlDateString }}">{{ updated | readableDate("MMMM dd, yyyy") }}</time>
+      {%- endif %}
+       &middot; {{ content | readingTime }} min read
+    </p>
+    <h1>{{ title }}</h1>
+    {%- set hasTags = tags | filterTagList %}
+    {%- if hasTags.length %}
+    <ul class="post-tags">
+      {%- for tag in hasTags %}
+      {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+      <li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+  </header>
+
+  {%- if tocItems.length >= 2 %}
+  <div class="post-toc-wrap">
+    <div class="post-body">{{ content | safe }}</div>
+    <aside class="toc" aria-label="Table of contents">
+      <p class="toc-label">On this page</p>
+      <ul>
+        {%- for item in tocItems %}
+        <li class="{% if item.level === 3 %}toc-h3{% endif %}">
+          <a href="#{{ item.id }}">{{ item.text }}</a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </aside>
+  </div>
+  {%- else %}
+  {{ content | safe }}
+  {%- endif %}
+</article>
+
+{%- if collections.posts %}
+{%- set previousPost = collections.posts | getPreviousCollectionItem %}
+{%- set nextPost = collections.posts | getNextCollectionItem %}
+{%- if nextPost or previousPost %}
+<nav class="post-nav" aria-label="Post navigation">
+  <div class="post-nav-prev">
+    {%- if previousPost %}
+    <span class="post-nav-label">Previous</span>
+    <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+    {%- endif %}
+  </div>
+  <div class="post-nav-next">
+    {%- if nextPost %}
+    <span class="post-nav-label">Next</span>
+    <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+    {%- endif %}
+  </div>
+</nav>
+{%- endif %}
+{%- endif %}

@@ -1,0 +1,32 @@
+---
+layout: layouts/home.njk
+title: Home
+---
+<section class="intro">
+  <h1>Hi, I'm <strong>Ridwan</strong> Julvianto</h1>
+  <p>I'm a software engineer writing about <a href="/tags/javascript/">JavaScript and TypeScript</a>, <a href="/tags/devops/">DevOps and testing</a>, <a href="/tags/career/">career growth</a>, and <a href="/tags/til/">short TIL notes</a>. I build things on the web and write here to think out loud.</p>
+</section>
+
+<section>
+  <h2 class="section-heading">Recent Posts</h2>
+  <div class="post-cards">
+    {%- for post in collections.posts | reverse | head(4) %}
+    <article class="post-card">
+      <time class="post-card-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("MMMM dd, yyyy") }}</time>
+      <p class="post-card-title"><a href="{{ post.url }}">{{ post.data.title }}</a></p>
+      {%- if post.data.description %}
+      <p class="post-card-desc">{{ post.data.description }}</p>
+      {%- endif %}
+      {%- set cardTags = post.data.tags | filterTagList %}
+      {%- if cardTags.length %}
+      <ul class="post-card-tags">
+        {%- for tag in cardTags %}
+        <li><a href="/tags/{{ tag | slugify }}/" class="post-tag">{{ tag }}</a></li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </article>
+    {%- endfor %}
+  </div>
+  <a href="/blog/" class="more-link">View all posts &rarr;</a>
+</section>

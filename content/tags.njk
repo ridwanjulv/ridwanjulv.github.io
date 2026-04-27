@@ -1,0 +1,18 @@
+---
+layout: layouts/home.njk
+title: Tags
+permalink: /tags/
+---
+<h1>Tags</h1>
+
+<p>Posts are organized around four content pillars.</p>
+
+<ul class="tag-list">
+{% for tag in collections | getKeys | filterTagList | sortAlphabetically %}
+  {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+  {% set tagPosts = collections[tag] %}
+  <li>
+    <a href="{{ tagUrl }}">{{ tag }}<span class="tag-count">({{ tagPosts | length }})</span></a>
+  </li>
+{% endfor %}
+</ul>
